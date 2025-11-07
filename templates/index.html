@@ -1,0 +1,82 @@
+{% extends "layout.html" %} {% block header %}
+<h1>Selamat Datang di JKT48 Theater</h1>
+<form
+  method="POST"
+  action="{{ url_for('cari_member') }}"
+  class="form-inline justify-content-center mt-3"
+>
+  <div class="form-group mb-2">
+    <label for="nama_member" class="sr-only">Nama Member</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nama_member"
+      name="nama_member"
+      placeholder="Cari Member"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Cari</button>
+</form>
+{% endblock %} {% block content %}
+<div class="row">
+  {% for member in members %}
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+    <div class="card text-center bg-secondary text-white">
+      <div class="image-container">
+        <img
+          src="{{ url_for('static', filename=member[3]) }}"
+          class="card-img-top member-img"
+          alt="{{ member[0] }}"
+          data-toggle="modal"
+          data-target="#memberModal{{ loop.index }}"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ member[0] }}</h5>
+        <p class="card-text">{{ member[2] }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="memberModal{{ loop.index }}"
+    tabindex="-1"
+    aria-labelledby="memberModalLabel{{ loop.index }}"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header">
+          <h5 class="modal-title" id="memberModalLabel{{ loop.index }}">
+            {{ member[0] }}
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img
+            src="{{ url_for('static', filename=member[3]) }}"
+            class="img-fluid"
+            alt="{{ member[0] }}"
+          />
+          <p class="mt-3">{{ member[2] }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

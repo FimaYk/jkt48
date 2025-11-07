@@ -1,0 +1,103 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-family: "Roboto";
+}
+.navbar-brand {
+  font-weight: 700;
+  font-size: xx-large;
+  margin-right: 2rem;
+}
+.nav-link {
+  font-weight: 1000;
+  font-size: x-large;
+  margin: 0 0.5rem;
+}
+.member-img {
+  transition: transform 0.3s;
+}
+.member-img:hover {
+  transform: scale(1.1);
+}
+.navbar-nav {
+  margin: 0 auto;
+}
+.bg-image {
+  background-image: url("background.jpg"); /* Path to your background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60vh; /* Full height of the viewport */
+}
+.image-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100%; /* 1:1 Aspect Ratio */
+}
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.card {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+.card-title,
+.card-text {
+  margin: 0;
+}
+.image-container img {
+  transition: transform 0.2s; /* Animation */
+}
+.image-container img:hover {
+  transform: scale(
+    1.1
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+body {
+  background: linear-gradient(135deg, #2c3e50, #1c1c1c);
+  background-size: cover;
+  color: rgb(255, 255, 255);
+}
+.contact-item {
+  font-size: 1.25rem; /* Memperbesar font untuk informasi kontak */
+}
+.social-btn {
+  font-size: 1.25rem; /* Memperbesar font untuk tombol media sosial */
+}
+.display-4 {
+  font-size: 3rem; /* Memperbesar ukuran font untuk judul utama */
+}
+.display-5 {
+  font-size: 2.5rem; /* Memperbesar ukuran font untuk sub-judul */
+}
+.lead {
+  font-size: 1.5rem; /* Memperbesar ukuran font untuk paragraf lead */
+}
+/* informasi */
+h7 {
+  color: #d9534f;
+  font-size: xx-large;
+}
+table {
+  width: 100%;
+}
+thead {
+  background-color: #d9534f;
+  color: white;
+}
+th {
+  background-color: #d9534f;
+}
+td {
+  padding: 15px;
+  text-align: center;
+  color: aliceblue;
+}
